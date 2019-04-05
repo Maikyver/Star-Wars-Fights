@@ -8,6 +8,9 @@ using WebApi.Models;
 
 namespace WebApi.Controllers
 {
+
+    [Route("api/[controller]")]
+    [ApiController]
     public class CharacterController : Controller
     {
 
