@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+ 
+body{
+   
+    background-color: black;
+    background-image: url("../Images/home-page.jpg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+}
+
+
