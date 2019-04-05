@@ -41,4 +41,4 @@ b.	Ver que planetas devolvemos (Elegir)
 7.	Servicio Pelea. (post(Personaje, Armas, Habilidades, Planeta))
 a.	Validar que AMBOS personajes estén bien armados
 b.	Usar reglas para planetas (Inventar)
-algo
+algo mas
