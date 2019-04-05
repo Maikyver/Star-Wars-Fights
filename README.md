@@ -1,6 +1,6 @@
-## Star-Wars-Fights
+# Star-Wars-Fights
 
-#FrontEnd
+## FrontEnd
 1.	Pantalla de inicio
 a.	Planeta (Default).
 b.	Grilla de personajes x2
@@ -19,7 +19,7 @@ b.	Mensaje de error
 7.	Luchar
 a.	Resultado
 8.	¿? Rematch? New fight? (¿Qué pasa después de la pelea?)
-# BackEnd (API)
+## BackEnd (API)
 1.	Servicio personajes 
 a.	Tomamos de swapi.co
 b.	Parametros:
