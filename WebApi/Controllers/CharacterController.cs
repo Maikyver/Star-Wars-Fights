@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Models;
 
+using WebApi.Utilites;
 namespace WebApi.Controllers
 {
 
@@ -13,13 +14,13 @@ namespace WebApi.Controllers
     [ApiController]
     public class CharacterController : Controller
     {
-
+        public PlanetProvider planetProvider = new PlanetProvider();
         //public async Task<ActionResult<List<CheckedDailyForecast>>>
 
         [HttpGet("[action]")]
-        public int Sports()
+        public async Task<ActionResult<List<Planet>>> Planets()
         {
-            return 1;
+            return await planetProvider.GetPlanetsAsync();
         }
 //comentando el controller
 
