@@ -33,5 +33,5 @@
 
 #cosas del back
 
-*/bin/*
-*/obj/*
+WebApi/bin/
+WebApi/obj/
