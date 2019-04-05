@@ -5,13 +5,13 @@
 1.	Pantalla de inicio
 	a.	Planeta (Default).
 	b.	Grilla de personajes x2
-c.	Lucha.
+	c.	Lucha.
 2.	Selección de Planeta. (opcional)
 3.	Selección del personaje.
 	a.	10 por default
 	b.	Filtros
-i.	Genero
-ii.	Especie (Nueva llamada)
+		i.	Genero
+		ii.	Especie (Nueva llamada)
 4.	Selección de armas.
 5.	Selección de habilidades.
 6.	Validar conformación del personaje
@@ -25,7 +25,7 @@ ii.	Especie (Nueva llamada)
 
 ## BackEnd (API)
 
-1.	Servicio personajes 
+1.	Servicio personajes
 	a.	Tomamos de swapi.co
 	b.	Parametros:
 		i.	cantidad (obligatorio)
