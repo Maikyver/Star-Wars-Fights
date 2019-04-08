@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Models;
 
+using WebApi.Utilites;
 namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class CharacterController : Controller
     {
-
+        public PlanetProvider planetProvider = new PlanetProvider();
         //public async Task<ActionResult<List<CheckedDailyForecast>>>
 
         [HttpGet("[action]")]
-        public int Sports()
+        public async Task<ActionResult<List<Planet>>> Planets()
         {
-            return 1;
+            return await planetProvider.GetPlanetsAsync();
         }
-
+//comentando el controller
 
         [HttpGet("[action]/{sportName}/{neededDays}")]
         public ActionResult<int> DailyForecasts(string sportName, int neededDays)
