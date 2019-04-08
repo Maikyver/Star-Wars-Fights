@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc; //para el actionResult
 
 namespace WebApi.Models
 {
-    public class Specie
+    public class Species
     {
-        
+        public string name { get; set; }
+        public int average_height { get; set; }
+        public int average_lifespan { get; set; }
     }
 }
