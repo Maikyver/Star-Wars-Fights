@@ -35,3 +35,7 @@
 
 */bin/*
 */obj/*
+
+WebApi/bin/
+WebApi/obj/
+.vscode/

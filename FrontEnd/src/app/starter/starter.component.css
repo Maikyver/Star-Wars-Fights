@@ -1,0 +1,23 @@
+.button-start{
+    display: inline-block;
+    padding: 20px;
+    background-color:   transparent;
+    border: none;
+    color: rgb(243,247,8);
+    font-family: 'AudioWide';
+    font-size: 40px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10%;
+}
+.button-start:hover{
+    border: none;
+    padding:  20px 10% ;
+    font-family: 'AudioWide';
+    font-size: 50px;
+    text-decoration: none;
+    border-radius: 10%;-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}

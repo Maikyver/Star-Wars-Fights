@@ -1,14 +1,8 @@
-.button-start{
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding:  20px 10% ;
+h1{
+    color: rgb(243,247,8);
     font-family: 'AudioWide';
-    font-size: 25px;
+    font-size: 30px;
     text-align: center;
     text-decoration: none;
-    margin: 0% 40%;
-    border-radius: 10%;
-
-
 }
+

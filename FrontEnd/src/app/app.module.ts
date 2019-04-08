@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
 import { PlanetsComponent } from './planets/planets.component';
 import { WeaponsComponent } from './weapons/weapons.component';
+import { PrincipalViewComponent } from './principal-view/principal-view.component';
+import { StarterComponent } from './starter/starter.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     CharactersComponent,
     PlanetsComponent,
-    WeaponsComponent
+    WeaponsComponent,
+    PrincipalViewComponent,
+    StarterComponent,
+
   ],
   imports: [
     BrowserModule,
