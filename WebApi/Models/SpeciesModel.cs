@@ -8,7 +8,9 @@ namespace WebApi.Models
     public class Species
     {
         public string name { get; set; }
-        public int average_height { get; set; }
-        public int average_lifespan { get; set; }
+        public string average_height { get; set; }
+        public string average_lifespan { get; set; }
+
+        public string url;
     }
 }

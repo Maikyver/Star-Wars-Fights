@@ -15,7 +15,7 @@ using Newtonsoft.Json;
                 HttpResponseMessage response = await hc.GetAsync(url);
                 if (!response.IsSuccessStatusCode)
                 {
-                    throw new Exception("Something failed while getting the planets");
+                    throw new Exception($"Something failed accesing Swapi------------{response.ReasonPhrase}");
                 }
             
                 string responseBody = await response.Content.ReadAsStringAsync(); 
