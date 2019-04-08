@@ -13,8 +13,16 @@ namespace WebApi.Controllers
     [ApiController]
     public class CharacterController : Controller
     {
-        public PlanetProvider planetProvider = new PlanetProvider();
-        public CharacterProvider characterProvider = new CharacterProvider();
+        public CharacterController(
+            IPlanetProvider _planetProvider,
+            ICharacterProvider _characterProvider
+        )
+        {
+            planetProvider = _planetProvider;
+            characterProvider= _characterProvider;
+        }
+        public IPlanetProvider planetProvider;
+        public ICharacterProvider characterProvider;
         //public async Task<ActionResult<List<CheckedDailyForecast>>>
 
         [HttpGet("[action]")]

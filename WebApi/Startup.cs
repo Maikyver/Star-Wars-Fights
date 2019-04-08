@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
+using WebApi.Models;
+using WebApi.Utilites;
+
 namespace WebApi
 {
     public class Startup
@@ -33,6 +36,12 @@ namespace WebApi
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddScoped<ICharacterProvider,CharacterProvider>();
+            services.AddScoped<IPlanetProvider,PlanetProvider>();
+            services.AddScoped<ISpeciesProvider,SpeciesProvider>();
+            services.AddScoped<IHabilitiesService,HabilitiesService>();
+            services.AddScoped<IHttpGetService,HttpGetService>();
+            services.AddScoped<IWeaponService,WeaponService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

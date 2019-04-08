@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using WebApi.Models;
 namespace WebApi.Utilites
 {
-    public class SpeciesProvider
+    public class SpeciesProvider : ISpeciesProvider
     {
         List<Species> cache = new List<Species>();
         HttpGetService httpGetService = new HttpGetService();

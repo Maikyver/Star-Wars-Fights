@@ -7,10 +7,19 @@ using System.Threading.Tasks;
 using WebApi.Models;
 namespace WebApi.Utilites
 {
-    public class CharacterProvider
+    public class CharacterProvider : ICharacterProvider
     {
-        HttpGetService httpGetService = new HttpGetService();
-        SpeciesProvider speciesProvider = new SpeciesProvider();
+        public CharacterProvider(
+            IHttpGetService _httpGetService,
+            ISpeciesProvider _speciesProvider
+        )
+        {
+            httpGetService= _httpGetService;
+            speciesProvider= _speciesProvider;
+        }
+        IHttpGetService httpGetService;
+        ISpeciesProvider speciesProvider;
+        //SpeciesProvider speciesProvider = new SpeciesProvider();
         public async Task<List<Character>> GetCharactersAsync(int amountCharacters)
         {
             string url = "https://swapi.co/api/people/";

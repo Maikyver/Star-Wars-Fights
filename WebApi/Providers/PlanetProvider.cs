@@ -9,7 +9,7 @@ using WebApi.Models;
 
 namespace WebApi.Utilites
 {
-    public class PlanetProvider
+    public class PlanetProvider : IPlanetProvider
     {
         HttpGetService httpGetService= new HttpGetService();
         public async Task<List<Planet>> GetPlanetsAsync()

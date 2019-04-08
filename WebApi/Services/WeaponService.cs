@@ -5,7 +5,7 @@ using WebApi.Models;
 
 namespace WebApi
 {
-    public class WeaponService
+    public class WeaponService : IWeaponService
     {
         public List<Weapon> weapons = new List<Weapon>();
         public WeaponService() //Pregeneradas

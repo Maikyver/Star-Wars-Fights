@@ -5,7 +5,7 @@ using WebApi.Models;
 
 namespace WebApi
 {
-    public class HabilitiesService
+    public class HabilitiesService : IHabilitiesService
     {
         public List<Habilitie> habilities = new List<Habilitie>();
         public HabilitiesService()
