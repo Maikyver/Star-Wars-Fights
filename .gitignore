@@ -34,4 +34,4 @@
 #cosas del back
 /WebApi/bin
 /WebApi/obj/
-/WebApi/.vscode
+/WebApi/.vscode/
