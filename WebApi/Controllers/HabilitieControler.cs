@@ -10,14 +10,14 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class WeaponsController : Controller
+    public class HabilitiesController : Controller
     {
-        public WeaponService weaponservice = new WeaponService();
+        public HabilitiesService habService = new HabilitiesService();
 
         [HttpGet()]
         public ActionResult<List<Weapon>> Get()
         { 
-            return(Ok(weaponservice.weapons));
+            return(Ok(habService.habilities));
         }
     }
 }
