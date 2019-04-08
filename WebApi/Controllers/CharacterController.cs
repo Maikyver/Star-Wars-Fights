@@ -14,6 +14,7 @@ namespace WebApi.Controllers
     public class CharacterController : Controller
     {
         public PlanetProvider planetProvider = new PlanetProvider();
+        public CharacterProvider characterProvider = new CharacterProvider();
         //public async Task<ActionResult<List<CheckedDailyForecast>>>
 
         [HttpGet("[action]")]
@@ -21,12 +22,12 @@ namespace WebApi.Controllers
         {
             return await planetProvider.GetPlanetsAsync();
         }
-//comentando el controller
 
-        [HttpGet("[action]/{sportName}/{neededDays}")]
-        public ActionResult<int> DailyForecasts(string sportName, int neededDays)
+        //http://localhost:5000/api/Character/Characters/5 es por el momento el llamado a la funcion. falta agregar a futuro un parametro para filtrado
+        [HttpGet("[action]/{amountCharacters}")]    //NO OLVIDAR QUE ESTO TIENE QUE TENER EL MISMO NOMBRE QUE EL PARAMETRO DEL METODO CHARACTERS(INT AMOUNTCHARACTERS)
+        public async Task<ActionResult<List<Character>>> Characters(int amountCharacters)
         {
-            return 1;
+            return await characterProvider.GetCharactersAsync();
         }
     }
 }
