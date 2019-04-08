@@ -10,6 +10,7 @@ namespace WebApi.Models
         public string name { get; set; }
         public string gender { get; set; }
         public string homeworld { get; set; }
+        public Species specie { get; set; }
         public List<string> species { get; set; }
         //public string url { get; set; }
     }
