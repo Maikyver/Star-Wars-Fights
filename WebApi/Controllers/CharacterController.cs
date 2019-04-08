@@ -12,6 +12,9 @@ namespace WebApi.Controllers
     [ApiController]
     public class CharacterController : Controller
     {
+
+        //public async Task<ActionResult<List<CheckedDailyForecast>>>
+
         [HttpGet("[action]")]
         public int Sports()
         {
