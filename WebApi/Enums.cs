@@ -2,20 +2,15 @@ namespace WebApi {
 
 public enum EnumArmas
    {
-       ESPADA,
-       ARCOYFLECHA,
-       FUERZABRUTA,
-       CUCHILLO,
-       HACHA,
-       ESCUDO
+       BOW,
+       FORCE,
+       KNIFE,
+       LASERGUN,
+       SHIELD,
+       LASERSABER
    }
 
 public enum EnumHabilidades
    {
-       MANEJODEARCOYFLECHA,
-       MANEJODECUCHILLO,
-       MANEJODEESPADA,
-       VELOCIDADDEMANOS
    }
-
 }

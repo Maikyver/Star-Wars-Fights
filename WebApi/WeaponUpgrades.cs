@@ -13,11 +13,10 @@ namespace WebApi {
            ValorModificaDaño = valorModificaDaño;
            ValorModificaDefensa = valorModificaDefensa;
        }
-
        public Weapon UpgradeWeapon( Weapon arma)
        {
-           arma.Daño=arma.Daño+(arma.Daño*ValorModificaDaño);
-           arma.Defensa=arma.Defensa+(arma.Defensa*ValorModificaDefensa);
+           arma.Damage=arma.Damage+(arma.Damage*ValorModificaDaño);
+           arma.Defense=arma.Defense+(arma.Defense*ValorModificaDefensa);
            return arma;
        }
    }

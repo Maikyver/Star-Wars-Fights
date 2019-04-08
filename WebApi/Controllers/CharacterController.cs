@@ -8,14 +8,10 @@ using WebApi.Models;
 
 namespace WebApi.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
     public class CharacterController : Controller
     {
-
-        //public async Task<ActionResult<List<CheckedDailyForecast>>>
-
         [HttpGet("[action]")]
         public int Sports()
         {
