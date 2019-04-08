@@ -1,89 +1,88 @@
-
 * {
-    margin: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  .planet-conteiner{
-    flex-direction: column;
-    display: inline-block;
+.planet-conteiner {
+  flex-direction: column;
+  display: inline-block;
   background-color: none;
   border: solid 1px pink;
-  width: 98vw;
+  width: 100%;
   height: 10vh;
   overflow: hidden;
-  }
-  .general-container{
-    flex-direction: column;
-    display: inline-block;
+}
+
+.general-container {
+  flex-direction: column;
+  display: inline-block;
   background-color: none;
-  border: solid 1px red;
-  width: 90vw;
+  border: solid 1px white;
+  width: 100vw;
   height: 78vh;
   overflow: hidden;
-  }
-  .characters-conteiner {
-      flex-direction: row;
-      display: inline-block;
-    background-color: none;
-    border: solid 1px red;
-    width: 34vw;
-    height: 80vh;
-    overflow: hidden;
-  }
-  .summarize-conteiner {
-    flex-direction: row;
-    display: inline-block;
+}
+
+.characters-conteiner {
+  flex-direction: row;
+  display: inline-block;
   background-color: none;
   border: solid 1px red;
-  width: 30vw;
-  height: 80vh;
+  width: 35%;
+  height: 100%;
   overflow: hidden;
 }
+
+.summarize-conteiner {
+  flex-direction: row;
+  display: inline-block;
+  background-color: none;
+  border: solid 1px red;
+  width: 30%;
+  height: 100%;
+  overflow: hidden;
+}
+
 .choosen-fighter-conteiner {
   background-color: none;
   border: solid 1px red;
-  width: 100vw;
-  height: 30vh;
+  width: 100%;
+  height: 45%;
   overflow: hidden;
-  color: yellow;
 }
-.summarize-conteiner {
-    flex-direction: row;
-    display: inline-block;
+
+.button-conteiner {
+  flex-direction: row;
+  display: inline-block;
   background-color: none;
   border: solid 1px red;
-  width: 30vw;
-  height: 80vh;
+  width: 100%;
+  height: 10%;
   overflow: hidden;
 }
-p{
-    color: pink;
+
+p {
+  color: pink;
 }
-.button-start{
+
+.button-start {
   display: inline-block;
-  padding: 20px;
-  background-color:   transparent;
+  background-color: transparent;
   border: none;
-  color: rgb(243,247,8);
+  color: rgb(243, 247, 8);
   font-family: 'AudioWide';
   font-size: 30px;
   text-align: center;
   text-decoration: none;
   border-radius: 10%;
 }
-.button-start:hover{
-  border: none;
-  padding:  20px 10% ;
-  font-family: 'AudioWide';
-  font-size: 50px;
-  text-decoration: none;
-  border-radius: 10%;-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-  box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-  transition: all 0.4s ease 0s;
-}
 
-.div-bottom{
-  align-self:flex-end;
+.button-start:hover {
+  border: none;
+  font-family: 'AudioWide';
+  font-size: 40px;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.4s ease 0s;
 }
