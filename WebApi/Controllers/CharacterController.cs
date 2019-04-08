@@ -27,7 +27,11 @@ namespace WebApi.Controllers
         [HttpGet("[action]/{amountCharacters}")]    //NO OLVIDAR QUE ESTO TIENE QUE TENER EL MISMO NOMBRE QUE EL PARAMETRO DEL METODO CHARACTERS(INT AMOUNTCHARACTERS)
         public async Task<ActionResult<List<Character>>> Characters(int amountCharacters)
         {
-            return await characterProvider.GetCharactersAsync();
+            if (amountCharacters <=0 )
+            {
+                throw new ArgumentOutOfRangeException("the amount of characters requested must be a positive int");
+            }
+            return await characterProvider.GetCharactersAsync(amountCharacters);
         }
     }
 }
