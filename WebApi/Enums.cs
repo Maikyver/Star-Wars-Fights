@@ -12,5 +12,11 @@ public enum EnumArmas
 
 public enum EnumHabilidades
    {
+      FORCE_CRUSH,
+      CULLING_BLADE,
+      OLD_JEDI_KNIGHT,
+      QUICK_SHOT,
+      PROTECTIVE_MANEUVER,
+      BLAST_SMASH
    }
 }
