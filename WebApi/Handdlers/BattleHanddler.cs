@@ -6,7 +6,7 @@ using WebApi.Controllers;
 namespace WebApi.Models {
     public class BattleHanddler {
         List<EnumArmas> weapons;
-        List<Ability> habilities;
+        List<Ability> abilities;
 
         /*
                TODO:
@@ -20,22 +20,35 @@ namespace WebApi.Models {
         */
 
         public BattleAnswer Battle () {
-            AbilitiesService mockHabilities= new AbilitiesService();
+            AbilitiesService mockHabilities = new AbilitiesService ();
             BattleAnswer answer = new BattleAnswer ();
-            List<EnumArmas> weaponsPayer1 = new List<EnumArmas> ();
+            List<EnumArmas> weaponsPlayer1 = new List<EnumArmas> ();
             List<EnumAbilities> habilitiesPlayer1 = new List<EnumAbilities> ();
-            List<EnumArmas> weaponsPayer2 = new List<EnumArmas> ();
+            List<EnumArmas> weaponsPlayer2 = new List<EnumArmas> ();
             List<EnumAbilities> habilitiesPlayer2 = new List<EnumAbilities> ();
 
-            CancelWeapons (weaponsPayer1, weaponsPayer2);
+            CancelWeapons (weaponsPlayer1, weaponsPlayer2);
+            CancelWeapons (weaponsPlayer2, weaponsPlayer1);
 
             return answer;
         }
 
-        private void CancelWeapons (List<EnumArmas> weaponsPayer1, List<EnumArmas> weaponsPayer2) {
-            
+        private void CancelWeapons (List<EnumArmas> weaponsPlayer1, List<EnumArmas> weaponsPlayer2) {
+            WeaponService dataBaseWeapons = new WeaponService ();
+
+            foreach (var weaponP1 in weaponsPlayer1) {
+
+                foreach (var weaponP2 in weaponsPlayer2) {
+
+                    Weapon realWeapon = dataBaseWeapons.weapons.Find (weapon => weapon.ID == weaponP1);
+                    if (weaponsPlayer2.Contains (realWeapon.ID)) {
+
+                        weaponsPlayer2.Remove(weaponP2);
+                    }
+                }
+            }
+
         }
 
     }
-
 }
