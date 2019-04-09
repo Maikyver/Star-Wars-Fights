@@ -17,7 +17,12 @@ namespace WebApi.Utilites
             string url = "https://swapi.co/api/planets/";
 
             GetPlanets planetData =  await  httpGetService.GetTAsync<GetPlanets>(url);
-            return planetData.results;
+            List<Planet> result = planetData.results;
+            while (result.Count >6)
+            {
+                result.RemoveAt(6);
+            } 
+            return result;
         }
     }
 

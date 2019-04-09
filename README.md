@@ -37,8 +37,8 @@
 3.	Servicio Habilidades. (get) **done**
 	a.	Pregeneradas
 	b.	IDEA: restringir personajes que las puedan usar
-4.	Servicio de Especies (get)
-	a.	Tomamos de swapi.co
+4.	Servicio de Especies (get) **done**
+	a.	Tomamos de swapi.co 
 5.	Servicio Planetas. (get) **done**
 	a.	Tomamos de swapi.co
 	b.	Ver que planetas devolvemos (Elegir)
