@@ -14,22 +14,14 @@ namespace WebApi.Controllers
     public class CharacterController : Controller
     {
         public CharacterController(
-            IPlanetProvider _planetProvider,
             ICharacterProvider _characterProvider
         )
         {
-            planetProvider = _planetProvider;
             characterProvider= _characterProvider;
         }
-        public IPlanetProvider planetProvider;
         public ICharacterProvider characterProvider;
         //public async Task<ActionResult<List<CheckedDailyForecast>>>
 
-        [HttpGet("[action]")]
-        public async Task<ActionResult<List<Planet>>> Planets()
-        {
-            return await planetProvider.GetPlanetsAsync();
-        }
 
         //http://localhost:5000/api/Character/Characters/5 es por el momento el llamado a la funcion. falta agregar a futuro un parametro para filtrado
         [HttpGet("[action]/{amountCharacters}")]    //NO OLVIDAR QUE ESTO TIENE QUE TENER EL MISMO NOMBRE QUE EL PARAMETRO DEL METODO CHARACTERS(INT AMOUNTCHARACTERS)
