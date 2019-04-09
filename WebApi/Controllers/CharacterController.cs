@@ -33,5 +33,10 @@ namespace WebApi.Controllers
             }
             return await characterProvider.GetCharactersAsync(amountCharacters);
         }
+        [HttpGet("[action]/{idCharacter}")]    //NO OLVIDAR QUE ESTO TIENE QUE TENER EL MISMO NOMBRE QUE EL PARAMETRO DEL METODO CHARACTERS(INT AMOUNTCHARACTERS)
+        public async Task<ActionResult<Character>> Character(int idCharacter)
+        {
+            return await characterProvider.GetCharacterAsync(idCharacter);
+        }
     }
 }

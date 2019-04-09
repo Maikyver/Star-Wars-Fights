@@ -8,6 +8,7 @@ namespace WebApi.Models
     public interface ICharacterProvider
     {
         Task<List<Character>> GetCharactersAsync(int amountCharacters);
+        Task<Character> GetCharacterAsync(int idCharacter);
     }
 
     public interface IPlanetProvider
