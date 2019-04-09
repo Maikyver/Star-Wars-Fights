@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace WebApi.Models
 {
-    public class Habilitie 
+    public class Ability 
     {
         public string name { get; set; }
-        public EnumHabilidades ID { get; set; }
+        public EnumAbilities ID { get; set; }
         public List<EnumArmas> toUpgrade { get; set; }
         public int Damage { get; set; }
         public int Defense{ get; set; }

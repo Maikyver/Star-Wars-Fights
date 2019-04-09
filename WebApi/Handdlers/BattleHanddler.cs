@@ -6,7 +6,7 @@ using WebApi.Controllers;
 namespace WebApi.Models {
     public class BattleHanddler {
         List<EnumArmas> weapons;
-        List<Habilitie> habilities;
+        List<Ability> habilities;
 
         /*
                TODO:
@@ -20,12 +20,12 @@ namespace WebApi.Models {
         */
 
         public BattleAnswer Battle () {
-            HabilitiesService mockHabilities= new HabilitiesService();
+            AbilitiesService mockHabilities= new AbilitiesService();
             BattleAnswer answer = new BattleAnswer ();
             List<EnumArmas> weaponsPayer1 = new List<EnumArmas> ();
-            List<EnumHabilidades> habilitiesPlayer1 = new List<EnumHabilidades> ();
+            List<EnumAbilities> habilitiesPlayer1 = new List<EnumAbilities> ();
             List<EnumArmas> weaponsPayer2 = new List<EnumArmas> ();
-            List<EnumHabilidades> habilitiesPlayer2 = new List<EnumHabilidades> ();
+            List<EnumAbilities> habilitiesPlayer2 = new List<EnumAbilities> ();
 
             CancelWeapons (weaponsPayer1, weaponsPayer2);
 

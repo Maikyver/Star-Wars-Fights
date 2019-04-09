@@ -10,7 +10,7 @@ public enum EnumArmas
        LASERSABER
    }
 
-public enum EnumHabilidades
+public enum EnumAbilities
    {
       FORCE_CRUSH,
       CULLING_BLADE,
