@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Star Wars Fight!';
-   clicked = false;
-
-   buttonDisapear():void {
-    this.clicked=true;
-   }
-
 }
