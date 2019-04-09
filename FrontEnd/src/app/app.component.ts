@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'FrontEnd';
+  title = 'Star Wars Fight!';
+   clicked = false;
+
+   buttonDisapear():void {
+    this.clicked=true;
+   }
+
 }
