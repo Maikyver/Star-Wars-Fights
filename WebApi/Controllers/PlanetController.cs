@@ -9,6 +9,8 @@ using WebApi.Models;
 using WebApi.Utilites;
 namespace WebApi.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class PlanetController : Controller
     {
 
