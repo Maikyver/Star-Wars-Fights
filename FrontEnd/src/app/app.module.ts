@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
 import { PlanetsComponent } from './planets/planets.component';
 import { WeaponsComponent } from './weapons/weapons.component';
-import { PrincipalViewComponent, winnerComponent } from './principal-view/principal-view.component';
+import { PrincipalViewComponent } from './principal-view/principal-view.component';
 import { StarterComponent } from './starter/starter.component';
 //import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -14,6 +14,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ShowWinnerComponent } from './show-winner/show-winner.component';
 
 
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { ShowWinnerComponent } from './show-winner/show-winner.component';
     BrowserModule,
     AppRoutingModule,
     MatDialogModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   entryComponents: [ShowWinnerComponent],//para el popup del winner
   providers: [],

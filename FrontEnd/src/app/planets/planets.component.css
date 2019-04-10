@@ -1,0 +1,25 @@
+select {
+    text-align: center;
+}
+li {
+    display:inline;
+}
+button {    
+    margin-right: 15px;
+    padding: 15px;
+    border-color: brown;
+    color: rgb(230,70,15);
+    font-family: 'AudioWide';
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10%;
+}
+button:hover {
+    font-size:25px;
+    color:rgb(45,175,15)
+}
+.Onclick{
+    font-size:25px;
+    color:rgb(45,175,15)    
+}

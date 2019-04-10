@@ -1,4 +1,19 @@
-<p>
-    planets works!
-  </p>
-  
+<!-- <mat-form-field>
+  <mat-label>Cars</mat-label>
+  <select matNativeControl required>
+    <option *ngFor="let planeti of planet" >{{planeti.name}}</option>
+  </select>
+</mat-form-field><select>
+ -->
+ <div *ngIf = "planets?.length>1">
+   <ul align="center">
+     <li  *ngFor="let planet of planets">
+       <button class = "font-effect-crackle" (click)= "setPlanet(planet.url)"[class.Onclick]="this.selectedPlanet == planet.url" > {{planet.name}}</button>
+     </li>
+   </ul>
+ </div>
+ 
+
+<!-- <select>
+    <option *ngFor="let planeti of planet" >{{planeti.name}}</option>
+</select> -->

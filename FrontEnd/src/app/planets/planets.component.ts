@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Planet}from './planet'
+import { PlanetsService } from '../Services/planets.service';
+/* import {MatSelectModule} from '@angular/material/select'; */
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-planets',
@@ -8,14 +11,19 @@ import {Planet}from './planet'
 })
 export class PlanetsComponent implements OnInit {
 
-  planet: Planet = {
-    id: 1,
-    name: 'Alderaan'
-  };
+  planets: Response = new Response();
+  selectedPlanet : string;
 
-  constructor() { }
+  constructor(private _planetsService : PlanetsService) { }
+  
+  setPlanet(url : string){
+    this.selectedPlanet=url;
+  }
 
   ngOnInit() {
+    this.selectedPlanet = "https://swapi.co/api/planets/2/";
+    this._planetsService.getPlanets()
+      .subscribe(aPlanet => this.planets = aPlanet)
   }
 
 }
