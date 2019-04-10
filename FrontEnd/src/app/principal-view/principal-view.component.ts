@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { CharactersComponent } from '../characters/characters.component';
+import { ShowWinnerComponent } from '../show-winner/show-winner.component';
 
 @Component({
   selector: 'app-principal-view',
@@ -21,9 +22,9 @@ export class PrincipalViewComponent implements OnInit {
 
 
   fightAndShowWinner():void{
-    const dialogRef = this.dialog.open(winnerComponent, {
-      width: '250px',
-      data: {name: "hola", animal: "this.animal"}
+    const dialogRef = this.dialog.open(ShowWinnerComponent, {
+      panelClass : "show-winner-dialog",
+      data: {name: "hola", animal: "UnAnimal"}
     });
   }
 }
@@ -35,25 +36,7 @@ export class PrincipalViewComponent implements OnInit {
 
 
 
-export interface DialogData {
+export interface WinnerData {
   animal: string;
   name: string;
-}
-
-
-@Component({
-  selector: 'winner',
-  templateUrl: 'winner.html',
-})
-
-export class winnerComponent {
-
-  constructor(
-    public dialogRef: MatDialogRef<winnerComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
 }

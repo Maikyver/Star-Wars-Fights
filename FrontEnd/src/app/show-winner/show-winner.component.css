@@ -1,0 +1,21 @@
+
+*{
+font-family: 'AudioWide';
+}
+
+.right{
+    align-content: right
+}
+
+.winner-container {
+    background-color: blue;
+    border: solid 1px red;
+    width: 100%;
+    height: 45%;
+    overflow: hidden;
+    padding: 5px;
+    box-sizing: border-box;
+
+
+    color: rgb(243, 247, 8);
+  }

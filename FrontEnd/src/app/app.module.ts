@@ -11,6 +11,7 @@ import { StarterComponent } from './starter/starter.component';
 //import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {MatDialogModule} from '@angular/material/dialog';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ShowWinnerComponent } from './show-winner/show-winner.component';
 
 
 
@@ -18,12 +19,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
-    winnerComponent,
     CharactersComponent,
     PlanetsComponent,
     WeaponsComponent,
     PrincipalViewComponent,
     StarterComponent,
+    ShowWinnerComponent,
 
   ],
   imports: [
@@ -32,7 +33,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatDialogModule,
     BrowserAnimationsModule
   ],
-  entryComponents: [winnerComponent],//para el popup del winner
+  entryComponents: [ShowWinnerComponent],//para el popup del winner
   providers: [],
   bootstrap: [AppComponent]
 })
