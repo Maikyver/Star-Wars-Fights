@@ -12,12 +12,12 @@ namespace WebApi.Controllers
     [ApiController]
     public class HabilitiesController : Controller
     {
-        public HabilitiesService habService = new HabilitiesService();
+        public AbilitiesService habService = new AbilitiesService();
 
         [HttpGet()]
         public ActionResult<List<Weapon>> Get()
         { 
-            return(Ok(habService.habilities));
+            return(Ok(habService.abilities));
         }
     }
 }

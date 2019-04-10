@@ -8,6 +8,7 @@ namespace WebApi.Models
     public interface ICharacterProvider
     {
         Task<List<Character>> GetCharactersAsync(int amountCharacters);
+        Task<Character> GetCharacterAsync(int idCharacter);
     }
 
     public interface IPlanetProvider
@@ -20,7 +21,7 @@ namespace WebApi.Models
         Task<Species> GetSpeciesAsync(string speciesUrl);
     }
 
-    public interface IHabilitiesService //no tiene metodos. Se inyecta igual solo para usar sus atributos?
+    public interface IAbilitiesService //no tiene metodos. Se inyecta igual solo para usar sus atributos?
     {
     }
 

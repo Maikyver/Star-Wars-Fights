@@ -47,6 +47,14 @@ namespace WebApi.Utilites
 
             return result;
         }
+        public async Task<Character> GetCharacterAsync(int idCharacter)
+        {
+            string url = $"https://swapi.co/api/people/{idCharacter}";
+            Character characterData = await httpGetService.GetTAsync<Character>(url);
+
+            return characterData;
+        }
+
 
         private async Task SetSpeciesToCharactersAsync(List<Character> characters)
         {

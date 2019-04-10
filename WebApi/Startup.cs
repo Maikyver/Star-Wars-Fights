@@ -39,7 +39,7 @@ namespace WebApi
             services.AddScoped<ICharacterProvider,CharacterProvider>();
             services.AddScoped<IPlanetProvider,PlanetProvider>();
             services.AddScoped<ISpeciesProvider,SpeciesProvider>();
-            services.AddScoped<IHabilitiesService,HabilitiesService>();
+            services.AddScoped<IAbilitiesService,AbilitiesService>();
             services.AddScoped<IHttpGetService,HttpGetService>();
             services.AddScoped<IWeaponService,WeaponService>();
         }
