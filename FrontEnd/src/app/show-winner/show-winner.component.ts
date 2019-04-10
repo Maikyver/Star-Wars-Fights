@@ -17,10 +17,7 @@ export class ShowWinnerComponent implements OnInit {
 
   ngOnInit() {
   }
-  onNoClick(): void {
-    //this.dialogRef.close();  
-  }
-  close():void{
-    this.dialogRef.close();
+  restart():void{
+    this.dialogRef.close("restart");
   }
 }

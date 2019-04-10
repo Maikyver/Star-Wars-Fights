@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CharactersComponent } from '../characters/characters.component';
 import { ShowWinnerComponent } from '../show-winner/show-winner.component';
 
@@ -15,21 +15,34 @@ export class PrincipalViewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    public dialog: MatDialog) {}
+    public dialog: MatDialog) { }
 
   ngOnInit() {
   }
 
 
-  fightAndShowWinner():void{
-    const dialogRef = this.dialog.open(ShowWinnerComponent, {
-      panelClass : "show-winner-dialog",
-      data: {name: "hola", animal: "UnAnimal"},
-      disableClose: true
+  fightAndShowWinner(): void {
+    let dialogRef = this.dialog.open(ShowWinnerComponent, {
+      panelClass: "show-winner-dialog",
+      data: { name: "hola", animal: "UnAnimal" },
+      //disableClose: true
     });
-    //dialogRef.
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`The dialog was closed-- result is ${result}`);
+      if(result=="restart")
+      {
+        this.backToStart();
+      }
+    });
+
   }
-  backToStart():void{
+
+
+
+
+
+  backToStart(): void {
     this.location.back();
   }
 }
