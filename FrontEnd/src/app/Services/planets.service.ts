@@ -9,6 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class PlanetsService {
   /* private _url="http://localhost:5000/api/planet/Planets"; */
+  /* npm start */
   private _url="/api/planet/Planets";
 
   constructor(private http: HttpClient) { }

@@ -9,6 +9,7 @@ import { WeaponsComponent } from './weapons/weapons.component';
 import { PrincipalViewComponent } from './principal-view/principal-view.component';
 import { StarterComponent } from './starter/starter.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
