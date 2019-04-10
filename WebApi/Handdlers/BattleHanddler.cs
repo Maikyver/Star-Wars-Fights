@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using WebApi;
+using WebApi.Models;
 using WebApi.Controllers;
 
-namespace WebApi.Models {
+namespace WebApi{
+
     public class BattleHanddler {
+        WeaponsHanddler weaponsHanddler=new WeaponsHanddler();
         /*
                TODO:
                *1.Cancelar Armas al enemigo -done-
@@ -33,10 +35,10 @@ namespace WebApi.Models {
                         'planet':1           
                    }";
 
-            var battleMock = JsonConvert.DeserializeObject<RootObject> (mock);
+            var battleMock = JsonConvert.DeserializeObject<OneOnOneFightData> (mock);
             CancelWeapons (battleMock.player1.weapons, battleMock.player2.weapons);
             CancelWeapons (battleMock.player2.weapons, battleMock.player1.weapons);
-            //CalculateHarm(battleMock.player1.weapons);
+            CalculateHarm(battleMock);
             BattleAnswer answer = new BattleAnswer (1, 300);
             return answer;
         }
@@ -47,16 +49,26 @@ namespace WebApi.Models {
 
             for (int i = 0; i < weaponsPlayer1.Count; i++) {
                 Weapon realWeapon = dataBaseWeapons.weapons.Find (weapon => weapon.ID == weaponsPlayer1[i]);
-                for (int j = weaponsPlayer2.Count-1; j >= 0; j--) {
+                for (int j = weaponsPlayer2.Count - 1; j >= 0; j--) {
 
                     if (realWeapon.CancelledWeapons.Contains (weaponsPlayer2[j])) {
                         weaponsPlayer2.Remove (weaponsPlayer2[j]);
-                    } 
-                    
+                    }
+
                 }
             }
 
         }
+        private int CalculateHarm (OneOnOneFightData battle) {
+            int score=0;
+
+            weaponsHanddler.CalculateImprovementOverWeapons (ref score,battle.player1.weapons);
+            //CalculateImprovementOverAbility(ref score,battle.player1.weapons,battle.player1.abilities);
+            //CalculateImprovementOverHomePlanet(ref score,battle.player1.id,battle.planet);
+
+            return score;
+        }
+
 
     }
 }
