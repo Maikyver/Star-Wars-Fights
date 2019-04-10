@@ -1,17 +1,15 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using WebApi;
 using WebApi.Controllers;
 
 namespace WebApi.Models {
     public class BattleHanddler {
-        List<EnumArmas> weapons;
-        List<Ability> abilities;
-
         /*
                TODO:
-               *1.Cancelar Armas al enemigo
-               *2.Que me cancele Armas el enemigo
+               *1.Cancelar Armas al enemigo -done-
+               *2.Que me cancele Armas el enemigo -done-
                *3.calcular daño al enemigo            
                *4.calcular defensa del enemigo.
                    *calcular nivel de daño y defensa de las armas segun el planeta
@@ -19,32 +17,42 @@ namespace WebApi.Models {
                    *Gana quien tenga mas segun la diferencia entre ataque y defensa del otro
         */
 
-        public BattleAnswer Battle () {
-            AbilitiesService mockHabilities = new AbilitiesService ();
-            BattleAnswer answer = new BattleAnswer ();
-            List<EnumArmas> weaponsPlayer1 = new List<EnumArmas> ();
-            List<EnumAbilities> habilitiesPlayer1 = new List<EnumAbilities> ();
-            List<EnumArmas> weaponsPlayer2 = new List<EnumArmas> ();
-            List<EnumAbilities> habilitiesPlayer2 = new List<EnumAbilities> ();
+        public BattleAnswer Battle (String data) {
 
-            CancelWeapons (weaponsPlayer1, weaponsPlayer2);
-            CancelWeapons (weaponsPlayer2, weaponsPlayer1);
+            var mock = @" {
+                       'player1':{
+                                    'Id':1,
+                                    'Weapons':[1,2],
+                                    'Abilities':[1,2],
+                                    },
+                         'player2':{
+                                    'Id':2,
+                                    'Weapons':[2,4],
+                                    'Abilities':[1,2],
+                                    },
+                        'planet':1           
+                   }";
 
+            var battleMock = JsonConvert.DeserializeObject<RootObject> (mock);
+            CancelWeapons (battleMock.player1.weapons, battleMock.player2.weapons);
+            CancelWeapons (battleMock.player2.weapons, battleMock.player1.weapons);
+            //CalculateHarm(battleMock.player1.weapons);
+            BattleAnswer answer = new BattleAnswer (1, 300);
             return answer;
         }
 
         private void CancelWeapons (List<EnumArmas> weaponsPlayer1, List<EnumArmas> weaponsPlayer2) {
+
             WeaponService dataBaseWeapons = new WeaponService ();
 
-            foreach (var weaponP1 in weaponsPlayer1) {
+            for (int i = 0; i < weaponsPlayer1.Count; i++) {
+                Weapon realWeapon = dataBaseWeapons.weapons.Find (weapon => weapon.ID == weaponsPlayer1[i]);
+                for (int j = weaponsPlayer2.Count-1; j >= 0; j--) {
 
-                foreach (var weaponP2 in weaponsPlayer2) {
-
-                    Weapon realWeapon = dataBaseWeapons.weapons.Find (weapon => weapon.ID == weaponP1);
-                    if (weaponsPlayer2.Contains (realWeapon.ID)) {
-
-                        weaponsPlayer2.Remove(weaponP2);
-                    }
+                    if (realWeapon.CancelledWeapons.Contains (weaponsPlayer2[j])) {
+                        weaponsPlayer2.Remove (weaponsPlayer2[j]);
+                    } 
+                    
                 }
             }
 
