@@ -24,8 +24,13 @@ export class PrincipalViewComponent implements OnInit {
   fightAndShowWinner():void{
     const dialogRef = this.dialog.open(ShowWinnerComponent, {
       panelClass : "show-winner-dialog",
-      data: {name: "hola", animal: "UnAnimal"}
+      data: {name: "hola", animal: "UnAnimal"},
+      disableClose: true
     });
+    //dialogRef.
+  }
+  backToStart():void{
+    this.location.back();
   }
 }
 
