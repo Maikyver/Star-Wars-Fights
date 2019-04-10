@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { WinnerData } from '../principal-view/principal-view.component';
+import { WinnerResponse } from '../Models/winner-response';
 
 @Component({
   selector: 'app-show-winner',
@@ -19,5 +20,8 @@ export class ShowWinnerComponent implements OnInit {
   }
   restart():void{
     this.dialogRef.close("restart");
+  }
+  close():void{
+    this.dialogRef.close();
   }
 }

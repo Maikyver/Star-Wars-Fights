@@ -4,6 +4,7 @@ import { Location } from '@angular/common';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { CharactersComponent } from '../characters/characters.component';
 import { ShowWinnerComponent } from '../show-winner/show-winner.component';
+import { WinnerService } from '../Services/winner.service';
 
 @Component({
   selector: 'app-principal-view',
@@ -15,26 +16,39 @@ export class PrincipalViewComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private location: Location,
-    public dialog: MatDialog) { }
+    public dialog: MatDialog,
+    private _winnerService: WinnerService ) { }
 
   ngOnInit() {
   }
 
 
   fightAndShowWinner(): void {
-    let dialogRef = this.dialog.open(ShowWinnerComponent, {
-      panelClass: "show-winner-dialog",
-      data: { name: "hola", animal: "UnAnimal" },
-      //disableClose: true
-    });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`The dialog was closed-- result is ${result}`);
-      if(result=="restart")
-      {
-        this.backToStart();
-      }
-    });
+    let dialogRef;
+
+    this._winnerService.getWinner().subscribe(aWinner =>{
+      console.log(aWinner.winnersId);
+      dialogRef = this.dialog.open(ShowWinnerComponent, {
+        panelClass: "show-winner-dialog",
+        //data: {winnersId : aWinner.winnersId, scoreMade : aWinner.scoreMade},
+        data: {winnersId :aWinner.winnersId, scoreMade : aWinner.scoreMade},
+        disableClose: true
+      })
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`The dialog was closed-- result is ${result}`);
+        if(result=="restart")
+        {
+          this.backToStart();
+        }
+      });
+
+
+      });
+
+
+
 
   }
 
@@ -55,6 +69,16 @@ export class PrincipalViewComponent implements OnInit {
 
 
 export interface WinnerData {
-  animal: string;
-  name: string;
+  WinnersId: number;
+  ScoreMade: number;
 }
+
+/* 
+
+dialogRef = this.dialog.open(ShowWinnerComponent, {
+  panelClass: "show-winner-dialog",
+  //data: {winnersId : aWinner.winnersId, scoreMade : aWinner.scoreMade},
+  data: {winnersId : 100, scoreMade : 100},
+  //disableClose: true
+})
+ */

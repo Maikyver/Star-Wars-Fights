@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Planet}from './planet'
 import { PlanetsService } from '../Services/planets.service';
 /* import {MatSelectModule} from '@angular/material/select'; */
 import { FormsModule } from '@angular/forms';

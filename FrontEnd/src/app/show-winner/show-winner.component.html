@@ -1,7 +1,11 @@
-<div class = "winner-container">
+<div class="winner-container">
+    <div class="right">
+        <button (click)="close()" class="right">X</button>
+    </div>
 
-    <h2>{{data.name}}{{data.animal}}</h2>
-    <h3>{{data.animal}}</h3>
+
+    <h2>{{data.winnersId}}---{{data.scoreMade}}</h2>
+    <h3>{{data.winnersId}}</h3>
     <button (click)="restart()">Restart</button>
 </div>
 
