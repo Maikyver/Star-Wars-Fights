@@ -5,13 +5,20 @@
   </select>
 </mat-form-field><select>
  -->
- <div *ngIf = "planets?.length>1">
+
+ 
+ <div *ngIf = "planets?.length>1; else loading">
    <ul align="center">
      <li  *ngFor="let planet of planets">
        <button class = "font-effect-crackle" (click)= "setPlanet(planet.url)"[class.Onclick]="this.selectedPlanet == planet.url" > {{planet.name}}</button>
      </li>
    </ul>
  </div>
+<ng-template #loading>
+  <div class = "loader"></div>
+
+</ng-template>
+
  
 
 <!-- <select>
