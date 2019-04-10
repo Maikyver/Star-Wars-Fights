@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+
 
 using WebApi.Models;
 using WebApi.Utilites;
@@ -17,6 +13,7 @@ namespace WebApi
 {
     public class Startup
     {
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -42,6 +39,7 @@ namespace WebApi
             services.AddScoped<IHabilitiesService,HabilitiesService>();
             services.AddScoped<IHttpGetService,HttpGetService>();
             services.AddScoped<IWeaponService,WeaponService>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,6 +59,8 @@ namespace WebApi
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+            string[] origins = new string[] { "http://localhost:4200" };
+		    app.UseCors(b => b.AllowAnyMethod().AllowAnyHeader().WithOrigins(origins));
 
             app.UseMvc(routes =>
             {

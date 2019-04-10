@@ -8,6 +8,7 @@ import { PlanetsComponent } from './planets/planets.component';
 import { WeaponsComponent } from './weapons/weapons.component';
 import { PrincipalViewComponent } from './principal-view/principal-view.component';
 import { StarterComponent } from './starter/starter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { StarterComponent } from './starter/starter.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
